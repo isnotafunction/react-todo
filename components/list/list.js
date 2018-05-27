@@ -3,7 +3,7 @@ import ToDoItem from '../todoItem/todoItem';
 import './list.css'
 
 const List = (props) =>{
-  const todos = props.todos.map(todo => {
+  const todos = props.todos.reverse().map(todo => {
     return <ToDoItem key={todo.id} text={todo.text} />
   })
 

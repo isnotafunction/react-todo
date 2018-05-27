@@ -14,7 +14,7 @@ class Input extends React.Component{
  
 handleSubmit = (e) => {
  e.preventDefault()
- if(e.target.value === ""){
+ if(!this.state.text.length){
    return;
  }
  const toDo = {
