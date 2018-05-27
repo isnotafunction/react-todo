@@ -29,7 +29,6 @@ handleSubmit = (e) => {
    completed:false,
    text: ''
  }))
- console.log(this.state.toDoArray)
 }
 
 handleDelete = (idToDelete) => {
@@ -49,7 +48,6 @@ handleComplete = (idToComplete) => {
      item.completed = !item.completed;
     }
   })
-  console.log(clonedToDoArray)
   this.setState({
     toDoArray: clonedToDoArray
   })
