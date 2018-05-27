@@ -1,5 +1,6 @@
 import React from 'react';
-import ToDoItem from './todoItem';
+import ToDoItem from '../todoItem/todoItem';
+import './list.css'
 
 const List = (props) =>{
   const todos = props.todos.map(todo => {
