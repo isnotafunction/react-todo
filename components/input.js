@@ -6,39 +6,62 @@ class Input extends React.Component{
     super(props)
     this.state = {
       text: '',
-      id: 0,
+      id: 0 + Math.random(),
       completed: false,
       toDoArray: []
     }
   }
+
+updateStateWithLocalStorage =() =>{
+   if(localStorage.getItem('todo').length>0){
+     let value = JSON.parse(localStorage.getItem('todo'))
+     this.setState({
+       toDoArray: value
+     })
+   }
+  }
+
+updateLocalStorage = (arr) =>{
+  localStorage.setItem("todo", JSON.stringify(arr))
+}
+
+componentDidMount(){
+  this.updateStateWithLocalStorage()
+}
  
 handleSubmit = (e) => {
  e.preventDefault()
  if(!this.state.text.length){
    return;
  }
- const toDo = {
+
+ const newToDo = {
    text: this.state.text,
-   id: this.state.id,
+   id: 0 + Math.random(),
    completed:false
   }
 
- this.setState(prevState => ({
-   toDoArray: prevState.toDoArray.concat(toDo),
-   id: ++prevState.id,
-   completed:false,
+ let clonedToDoArray = JSON.parse(JSON.stringify(this.state.toDoArray))
+ let updatedArray = clonedToDoArray.concat(newToDo)
+
+ this.updateLocalStorage(updatedArray)
+
+ this.setState((prevState)  => ({
+   toDoArray: prevState.toDoArray.concat(newToDo),
    text: ''
  }))
+  
 }
 
 handleDelete = (idToDelete) => {
- const clonedToDoArray = JSON.parse(JSON.stringify(this.state.toDoArray))
+ let clonedToDoArray = JSON.parse(JSON.stringify(this.state.toDoArray))
  const filteredToDoArray = clonedToDoArray.filter((item)=>{
   return item.id !== idToDelete
  })
  this.setState({
   toDoArray: filteredToDoArray,
 })
+this.updateLocalStorage(filteredToDoArray)
 }
 
 handleComplete = (idToComplete) => {
@@ -51,6 +74,7 @@ handleComplete = (idToComplete) => {
   this.setState({
     toDoArray: clonedToDoArray
   })
+  this.updateLocalStorage(clonedToDoArray)
 }
 
 render() {
