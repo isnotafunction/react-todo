@@ -1,9 +1,9 @@
 import React from 'react';
-import ToDoItem from '../todoItem/todoItem';
-import './list.css'
+import ToDoItem from './todoItem';
+
 
 const List = ({todos, deleteItem, completeItem}) =>{
-  const todosArr = todos.reverse().map(todo => {
+  const todosArr = todos.map(todo => {
     return (
      <ToDoItem 
         key={todo.id} 

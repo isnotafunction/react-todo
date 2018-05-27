@@ -1,6 +1,5 @@
 import React from 'react';
-import List from '../list/list'
-import './input.css'
+import List from '.list'
 
 class Input extends React.Component{
   constructor(props){
@@ -61,8 +60,9 @@ render() {
     <React.Fragment>
     <div className="input">
     <form onSubmit={this.handleSubmit}>
-     <label htmlFor="input-field">What do you want to do?</label>
+     <label htmlFor="input-field"></label>
      <input 
+       placeholder="...what do you want to do?"
        id="input-field"
        value={this.state.text} 
        onChange={e => this.setState({text: e.target.value})} 

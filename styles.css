@@ -16,10 +16,15 @@ body{
   padding: 0.5rem;
 }
 
+.input{
+  min-width: 20rem;
+
+}
+
 input{
   border-radius: 5px;
   border: none;
-  width: 80%;
+  width: 85%;
   height: 1.5rem;
   margin: 1rem 0.3rem;
 }
@@ -36,21 +41,28 @@ ul{
 }
 
 button{
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  border-radius: 30%;
+  height: 1.5rem;
+  width: 1.5rem;
   background-color: transparent;
   color: #fafafa;
 }
 
 .button__delete{
-  border: 1px solid salmon;
-  color: salmon;
+  /* border: 1px solid salmon;
+  color: salmon; */
+  background-color: salmon;
+  color: #5c6572;
+  border:none;
 }
 .button__complete{
-  border: 1px solid aquamarine;
+  background-color:aquamarine;
+  border:none;
 }
 button:focus{
+  outline:none;
+}
+button:active{
   outline: none;
   box-shadow: 0 0 5px #fff;
 }
@@ -66,8 +78,8 @@ li{
 }
 
 .button__completed-complete{
-  background-color: rgba(127, 255, 212, 0.493);
-  border: none;
+  border:1px solid rgba(127, 255, 212, 0.493);
+  background-color: transparent;
 }
 
 .list__item-complete{
