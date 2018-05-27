@@ -13,8 +13,8 @@ function ToDoItem (props){
   }
   
     return (
-      <li className='list__item' id={props.id} key={props.id}>
-      <button className="button__complete" onClick={()=>checkItem(props.id)}> v </button>
+      <li className={`list__item ${props.listClassName}`}id={props.id} key={props.id}>
+      <button className={`button__complete ${props.buttonClassName}`} onClick={()=>checkItem(props.id)}> </button>
       <div>
       {props.text}
       </div>

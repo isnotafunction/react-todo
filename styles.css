@@ -37,23 +37,40 @@ ul{
 
 button{
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  border: 1px solid #fafafa;
+  height: 30px;
+  width: 30px;
   background-color: transparent;
+  color: #fafafa;
 }
 
+.button__delete{
+  border: 1px solid salmon;
+  color: salmon;
+}
+.button__complete{
+  border: 1px solid aquamarine;
+}
 button:focus{
   outline: none;
   box-shadow: 0 0 5px #fff;
 }
 
 li{
-  border: 1px solid rgb(153, 148, 148);
+  background-color: #818ea0a8;
   border-radius: 5px;
   margin: 2px;
   padding: 2px 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.button__completed-complete{
+  background-color: rgba(127, 255, 212, 0.493);
+  border: none;
+}
+
+.list__item-complete{
+  background-color:  #788291a8;
+  color: #5c6572;
 }

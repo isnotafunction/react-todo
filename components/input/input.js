@@ -47,7 +47,7 @@ handleComplete = (idToComplete) => {
   const clonedToDoArray = JSON.parse(JSON.stringify(this.state.toDoArray))
   clonedToDoArray.forEach((item)=>{
     if(item.id === idToComplete ){
-     item.completed = true;
+     item.completed = !item.completed;
     }
   })
   console.log(clonedToDoArray)

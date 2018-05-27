@@ -9,6 +9,8 @@ const List = ({todos, deleteItem, completeItem}) =>{
         key={todo.id} 
         id={todo.id} 
         text={todo.text} 
+        listClassName = {todo.completed ? "list__item-complete" : ""}
+        buttonClassName={todo.completed ? "button__completed-complete" : ""}
         deleteItem={deleteItem}
         completeItem={completeItem}
         />
