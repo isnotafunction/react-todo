@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './list'
+import List from '../list/list'
 import './input.css'
 
 class Input extends React.Component{
@@ -40,6 +40,9 @@ render() {
        value={this.state.text} 
        onChange={e => this.setState({text: e.target.value})} 
       />
+    
+    <button className="add"> + </button>
+  
     </form>
     </div>
     <List todos={this.state.toDoArray} />
