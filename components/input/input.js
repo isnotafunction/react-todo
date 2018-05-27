@@ -23,7 +23,7 @@ handleSubmit = (e) => {
   }
 
  this.setState(prevState => ({
-   toDoArray: prevState.toDoArray.concat(toDo).reverse(),
+   toDoArray: prevState.toDoArray.concat(toDo),
    id: ++prevState.id,
    text: ''
  }))
