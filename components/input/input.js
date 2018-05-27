@@ -8,6 +8,7 @@ class Input extends React.Component{
     this.state = {
       text: '',
       id: 0,
+      completed: false,
       toDoArray: []
     }
   }
@@ -19,14 +20,40 @@ handleSubmit = (e) => {
  }
  const toDo = {
    text: this.state.text,
-   id: this.state.id
+   id: this.state.id,
+   completed:false
   }
 
  this.setState(prevState => ({
    toDoArray: prevState.toDoArray.concat(toDo),
    id: ++prevState.id,
+   completed:false,
    text: ''
  }))
+ console.log(this.state.toDoArray)
+}
+
+handleDelete = (idToDelete) => {
+ const clonedToDoArray = JSON.parse(JSON.stringify(this.state.toDoArray))
+ const filteredToDoArray = clonedToDoArray.filter((item)=>{
+  return item.id !== idToDelete
+ })
+ this.setState({
+  toDoArray: filteredToDoArray,
+})
+}
+
+handleComplete = (idToComplete) => {
+  const clonedToDoArray = JSON.parse(JSON.stringify(this.state.toDoArray))
+  clonedToDoArray.forEach((item)=>{
+    if(item.id === idToComplete ){
+     item.completed = true;
+    }
+  })
+  console.log(clonedToDoArray)
+  this.setState({
+    toDoArray: clonedToDoArray
+  })
 }
 
 render() {
@@ -45,7 +72,11 @@ render() {
   
     </form>
     </div>
-    <List todos={this.state.toDoArray} />
+    <List 
+    todos={this.state.toDoArray} 
+    deleteItem={this.handleDelete} 
+    completeItem={this.handleComplete}
+    />
     </React.Fragment>
   )
 }
