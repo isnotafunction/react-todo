@@ -1,5 +1,5 @@
 import React from 'react';
-import List from '.list'
+import List from './list'
 
 class Input extends React.Component{
   constructor(props){
