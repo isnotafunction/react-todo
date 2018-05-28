@@ -13,7 +13,7 @@ class Input extends React.Component{
   }
 
 updateStateWithLocalStorage =() =>{
-   if(localStorage.getItem('todo').length>0){
+   if(localStorage.getItem('todo')){
      let value = JSON.parse(localStorage.getItem('todo'))
      this.setState({
        toDoArray: value
