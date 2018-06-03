@@ -1,6 +1,6 @@
 ## React To Do List with Local Storage
 
-A simple to to do list built with React.
+A simple to do list built with React.  
 Deployed to Netlify: https://isnotafunction-react-todo.netlify.com/
 
 As a user, I can:  
